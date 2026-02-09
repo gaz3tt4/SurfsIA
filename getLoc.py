@@ -1,5 +1,6 @@
 import requests
 import geocoder
+import json
 
 def get_ip_address():
     g = geocoder.ip('me')
@@ -13,4 +14,5 @@ def getLocation(ip_address):
 
 ip_address = get_ip_address()
 location = getLocation(ip_address)
+location = json.dumps(location, indent=4, separators=(',', ': '))
 print(location)
